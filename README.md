@@ -3,14 +3,14 @@
 
 Your project name, team name and team member(s) 
 Tic Tac Toe
-Little munchkins
+The Boys
 Elijah Day, Ross Harrison, Francisco Henriques
 
 Describe what you are trying to build, why do you want to build it, what it will be useful for, how it will be used, etc. 
 We are going to build a program that allows the user to verse a computer in a game of tic tac toe. Want to challenge ourselves in building this code, as we have not built a program this big before. We also think that this would be a fun program to make. Its use will be that it is fun and entertaining to do between a group of people
 
 
-(Important) Draw initial UML class diagram.
+(Important) Draw initial UML class diagram.(cannot draw boxes but follws the UML diagram)
 TicTacToe
 board: char[ ][ ]
 currentPlayer: char
