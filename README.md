@@ -1,28 +1,36 @@
 # projectCSI
 
-
 Your project name, team name and team member(s) 
-Tic Tac Toe
+Hangman
 The Boys
 Elijah Day, Ross Harrison, Francisco Henriques
 
+
 Describe what you are trying to build, why do you want to build it, what it will be useful for, how it will be used, etc. 
-We are going to build a program that allows the user to verse a computer in a game of tic tac toe. Want to challenge ourselves in building this code, as we have not built a program this big before. We also think that this would be a fun program to make. Its use will be that it is fun and entertaining to do between a group of people
+We will make a program that allows the user to play a game of hangman competing against the computer that chooses a random word. We want to build it because we believe this will be a challenge for us as we have not built something this challenging before. We also think this will be a fun program to make. Its use will be that it is fun and entertaining for anyone who plays.
 
 
-(Important) Draw initial UML class diagram.(cannot draw boxes but follws the UML diagram)
-TicTacToe
-board: char[ ][ ]
-currentPlayer: char
-main(args: String[ ])
-printBoard(board)
-isValidMove(board, row, col)
-isGameFinished(board, player)
-getWinner(board)
-isBoardFull(board)
-
+(Important) Draw initial UML class diagram.
++---------------------+
+|    HangmanGame     |
++---------------------+
+| - WORDS: String[]  |
+| - MAX_TRIES: int    |
++---------------------+
+| + main(args: String[]): void |
+| + selectRandomWord(): String |
+| + initializeGuessedWord(guessedWord: char[]): void |
+| + isGuessCorrect(guess: char, word: String, guessedWord: char[]): boolean |
+| + isWordGuessed(guessedWord: char[]): boolean |
++---------------------+
 
 
 Plan and estimate of effort.
-Plan out group meetings and work options to slowly and efficiently develop the application. We will start with creating the tic tac toe board for users to play on, while also creating two players for the game. Once we are comfortable with the board and player greetings, we will start to implement columns and row options for the player, where the code will be able to scan each row and column for the user to choose from. We will need to develop code on whether the game ended in a win or stalemate for the users, and to check if the board is full with O and X. The most difficult part of the code that we will have will be allowing the user to choose spots on the tic tac toe board to choose from in order to win the game. Overall, it will take a few meetings to complete this project. Would estimate around 5 to 8 different meeting times, but will be completed perfectly in roughly 3 ½ weeks
+This project will involve a large amount of while and for loops in order to create a functional hangman game. We will start by creating a certain series of words that will be chosen by the computer, in which the user will have to guess. The user has a total of 6 guesses, but if the user guesses correctly the total number of guesses will not decrease. The function of the if statements is to declare whether or not the user has made a correct guess or not, and the user is also able to either guess a particular letter or the entire word. 
+The plan is to start off simple and create words that the user can choose from, then we will make statements to determine whether or not the user is correct. The hardest part will be making while statements to figure out if the letter that the user chooses is correct, and to take away total tries or leave it stagnant. 
+
+Overall this project will be fun to make, especially since we can choose the words that are able to be chosen by the computer, plus it is a classic game enjoyed by all. We will work every week in order to maximize this project's work, and will attempt to make it as complex as possible for the experience.  
+
+
+
 
