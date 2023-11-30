@@ -275,7 +275,10 @@ public class App extends Application {
 
 class Dictionary {
     public String getHiddenWord() {
-        String[] words = {"hangman", "java", "programming", "computer", "developer"};
-        return words[(int) (Math.random() * words.length)];
+    String[] words = {"hangman", "java", "programming", "computer", "developer", "oakland", "university", "school", "coding", "engineering", "object", "class", "method", "float"};        return words[(int) (Math.random() * words.length)];
+    return words[(int) (Math.random() * words.length)];
     }
+}
+    }
+    
 }
