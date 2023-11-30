@@ -4,6 +4,9 @@ Click run to start the game
 
 you have a certain amount of guesses, enter a letter to guess
 
+Letter possible are: a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z
+NOT CASE SENSITIVE
+
 if you get it wrong, you lose a guess and a body part is added to the hangman
 
 if you get it right, the letter appears in the blank lines to fulfill the word
