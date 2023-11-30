@@ -17,6 +17,7 @@ import javafx.scene.shape.Shape;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.scene.text.TextAlignment;
 
 public class App extends Application {
     // TextFields for user input and displaying guessed letters
@@ -28,8 +29,7 @@ public class App extends Application {
     // Arrays and variables to manage the game state
     private Text[] text;
     private Label guessesRemaining;
-    private Label resultLabel;
-
+    private Text resultText; // Modified to use Text instead of Label
     private int left;
     private ArrayList<Shape> body;
     private ObservableList<Node> children;
@@ -184,9 +184,11 @@ public class App extends Application {
         guessesRemaining = new Label(String.valueOf(left));
         gridPane.add(guessesRemaining, 0, 3);
 
-        // Label for displaying game result
-        resultLabel = new Label("");
-        gridPane.add(resultLabel, 1, 4);
+        // Text element for displaying game result
+        resultText = new Text("");
+        resultText.setWrappingWidth(200); // Set a fixed width for the result text
+        resultText.setTextAlignment(TextAlignment.CENTER);
+        gridPane.add(resultText, 1, 4);
 
         // Create a BorderPane to organize components
         BorderPane thing = new BorderPane();
@@ -196,7 +198,7 @@ public class App extends Application {
         // Button to start a new game
         Button resetButton = new Button("Start New Game");
         resetButton.setOnAction(e -> resetGame());
-        gridPane.add(resetButton, 1, 5);
+        gridPane.add(resetButton, 2, 8);
         GridPane.setHalignment(resetButton, HPos.RIGHT);
 
         // Event handler for user input
@@ -223,7 +225,7 @@ public class App extends Application {
         }
 
         // Clear existing blanks and text elements
-        children.removeIf(node -> node instanceof Line || node instanceof Text);
+        children.removeIf(node -> node instanceof Text);
 
         // Redraw gallows and rope
         initGallows();
@@ -232,8 +234,8 @@ public class App extends Application {
 
         left = 6;
         guessesRemaining.setText(String.valueOf(left));
-        resultLabel.setText("");
-        gameEnded = false;
+        resultText.setText(""); // Clear the result text
+        gameEnded = false; // Reset the gameEnded flag
     }
 
     // Process user input and update game state
@@ -282,7 +284,7 @@ public class App extends Application {
 
         // If no guesses are remaining, end the game and display the correct word
         if (left == 0) {
-            resultLabel.setText("Sorry, you lost! The word was: " + theWord);
+            resultText.setText("Sorry, you lost! The word was: " + theWord);
             gameEnded = true;
         }
 
@@ -297,7 +299,7 @@ public class App extends Application {
 
         // If the word has been guessed, end the game and display a congratulatory message
         if (solved) {
-            resultLabel.setText("Congratulations! You guessed the word: " + theWord);
+            resultText.setText("Congratulations! You guessed the word: " + theWord);
             gameEnded = true;
         }
     }
