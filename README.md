@@ -1,4 +1,4 @@
-# projectCSI
+# projectProposalCSI
 
 Your project name, team name and team member(s) 
 Hangman
@@ -11,6 +11,10 @@ We will make a program that allows the user to play a game of hangman competing 
 
 
 (Important) Draw initial UML class diagram.
+
+THIS IS OUR INITIAL UML CLASS DIAGRAM FOR OUR PROPOSAL
+FINISHED DIAGRAM IS WRITTEN UNDER "uml diagram.png"
+
 +---------------------+
 |    HangmanGame     |
 +---------------------+
