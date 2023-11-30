@@ -1,0 +1,59 @@
+Hangman Implementation Manual
+  This Hangman Game is a JavaFX application that allows users to play the classic word-guessing game. The game features a graphical representation of a gallows and a hanging man. Users can input letters to guess the hidden word, and the game provides feedback on correct and incorrect guesses.
+
+
+Prerequisites
+  Java Development Kit (JDK) installed (version 8 or later)
+  Integrated Development Environment (IDE) for Java development (e.g., Eclipse, IntelliJ IDEA)
+  Running the Game
+  Download the Code:
+
+
+Copy the provided Java code into a file with the .java extension, for example, HangmanGame.java.
+  Open the Code in an IDE:
+  Open your preferred Java IDE (e.g., Eclipse, IntelliJ IDEA).
+  Import the Java file into your IDE.
+  Compile and Run:
+
+  Compile and run the App class that extends Application.
+  The Hangman Game window will appear.
+  Playing the Game
+  Game Window
+
+The Hangman Game window consists of three main sections:
+  Gallows and Hangman Body Parts:
+    Displays the gallows and parts of the hanging man as incorrect guesses are made.
+    User Input and Information Grid:
+    Allows users to input letters for guessing.
+    Shows the letters guessed and remaining guesses.
+    Displays the hidden word with blanks for each letter.
+
+  Result Text:
+    Displays the game result, such as winning or losing.
+    Starting a New Game
+    Click the "Start New Game" button to reset the game and choose a new hidden word.
+    Making Guesses
+    Input a letter in the "Enter a letter" text field.
+    Press Enter to submit the guess.
+    The game provides feedback on correct and incorrect guesses.
+    Game End
+
+If the user correctly guesses the word, a congratulatory message is displayed.
+If the user runs out of guesses, a message reveals the correct word, and the user loses.
+
+Note
+  The game prevents input of more than one letter at a time.
+  The game checks if a letter has been guessed before to avoid duplicate guesses.
+
+Modifying the Game
+  Customizing Hidden Words
+  Modify the Dictionary class to include your own set of hidden words.
+  Changing the UI
+  Adjust the graphical elements, fonts, or colors by modifying the JavaFX code.
+
+Troubleshooting
+  Ensure that you have Java and JavaFX properly installed.
+  Check for any error messages in the IDE console.
+
+Conclusion
+  You've successfully set up and played the Hangman Game! Have fun guessing words and exploring the code. Feel free to modify and extend the game to add more features or customize the user interface.
