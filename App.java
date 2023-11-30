@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.collections.ObservableList;
+import javafx.geometry.HPos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -36,22 +37,22 @@ public class App extends Application {
 
     private void initGallows() {
         Line gallow1 = new Line(25, 25, 200, 25);
-        gallow1.setStroke(Color.BROWN);
+        gallow1.setStroke(Color.RED);
         gallow1.setStrokeWidth(3);
         children.add(gallow1);
 
         Line gallow2 = new Line(25, 25, 25, 300);
-        gallow2.setStroke(Color.BROWN);
+        gallow2.setStroke(Color.RED);
         gallow2.setStrokeWidth(3);
         children.add(gallow2);
 
         Line gallow3 = new Line(300, 300, 25, 300);
-        gallow3.setStroke(Color.BROWN);
+        gallow3.setStroke(Color.RED);
         gallow3.setStrokeWidth(3);
         children.add(gallow3);
 
         Line rope = new Line(200, 25, 200, 75);
-        rope.setStroke(Color.BROWN);
+        rope.setStroke(Color.RED);
         rope.setStrokeWidth(3);
         children.add(rope);
     }
@@ -68,7 +69,7 @@ public class App extends Application {
         body.add(head);
 
         Line tor = new Line(200, 200, 200, 150);
-        tor.setStroke(Color.GOLD);
+        tor.setStroke(Color.BLACK);
         tor.setStrokeWidth(5);
         tor.setVisible(false);
         children.add(tor);
@@ -145,7 +146,7 @@ public class App extends Application {
         guessedLetters = new StringBuilder();
 
         initBlanks(theWord);
-        System.out.println(theWord);
+
 
         text = initText(theWord);
         left = 6;
@@ -171,6 +172,7 @@ public class App extends Application {
         Button resetButton = new Button("Start New Game");
         resetButton.setOnAction(e -> resetGame());
         gridPane.add(resetButton, 1, 5);
+        GridPane.setHalignment(resetButton, HPos.RIGHT);
 
         tfGuess.setOnAction(e -> playGame());
 
@@ -184,26 +186,34 @@ public class App extends Application {
         // Reset all game variables
         theWord = word.getHiddenWord().toUpperCase();
         guessedLetters.setLength(0);
+        tfGuess.clear();
         tfLettersGuessed.clear();
-        initBlanks(theWord);
-        text = initText(theWord);
-        left = 6;
-        guessesRemaining.setText(String.valueOf(left));
-        resultLabel.setText("");
-        gameEnded = false;
-
+    
         // Make all body parts invisible again
         for (Shape part : body) {
             part.setVisible(false);
         }
+    
+        // Clear existing blanks and text elements
+        children.removeIf(node -> node instanceof Line || node instanceof Text);
+    
+        // Redraw gallows and rope
+        initGallows();
+        initBlanks(theWord);
+        text = initText(theWord);
+    
+        left = 6;
+        guessesRemaining.setText(String.valueOf(left));
+        resultLabel.setText("");
+        gameEnded = false;
     }
+    
 
     private void playGame() {
         if (gameEnded) {
             System.out.println("The game has ended. Please start a new game.");
             return;
         }
-
         String guess = tfGuess.getText();
         if (guess.length() == 0) {
             return;
