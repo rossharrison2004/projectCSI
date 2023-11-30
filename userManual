@@ -1,0 +1,13 @@
+Simple Hangman game
+
+Click run to start the game
+
+you have a certain amount of guesses, enter a letter to guess
+
+if you get it wrong, you lose a guess and a body part is added to the hangman
+
+if you get it right, the letter appears in the blank lines to fulfill the word
+
+you can click start over to restart the game, or simply close the tab and click run once more
+
+goodluck!
